@@ -1,3 +1,4 @@
 /.metadata/
-p1connection.properties
 *.csv
+*.properties
+*.xml

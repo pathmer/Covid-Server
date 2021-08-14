@@ -51,9 +51,9 @@ public class SpringController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<US_County> addUS_County(@RequestBody US_County usc) { // I want to acknowledge that a new Cat and endpoint have been created. 
+	public ResponseEntity<US_County> addUS_County(@RequestBody US_County usc) { // I want to acknowledge that a new US_County and endpoint have been created. 
 		US_County uscounty = uscServ.addUS_County(usc);
-		return ResponseEntity.created(URI.create("http://localhost:8080/CatAppSpringWeb/cats/" + uscounty.getId())).build();
+		return ResponseEntity.created(URI.create("http://localhost:8080/Covid_Server_BackEnd/US_Counties/" + uscounty.getId())).build();
 		// TODO add comment re what we're doing here
 	}
 	
