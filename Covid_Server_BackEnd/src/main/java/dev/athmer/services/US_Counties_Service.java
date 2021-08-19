@@ -6,53 +6,54 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dev.athmer.models.US_County;
-import dev.athmer.repositories.US_Counties_Hibernate;
+import dev.athmer.repositories.I_US_Counties_Repository;
 
 @Service
 public class US_Counties_Service implements I_US_Counties_Service {
 	
-//	@Autowired // Dependency Injection - Field Injection
-//	private US_Counties_Hibernate usch;
+	private I_US_Counties_Repository uscr;
 	
-	private US_Counties_Hibernate usch;
-	
-	// Constructor Injection
 	@Autowired
-	public US_Counties_Service(US_Counties_Hibernate usch) { // Like Dependency Injection in Angular
-		this.usch = usch;
+	public US_Counties_Service(I_US_Counties_Repository uscr) { // Like Dependency Injection in Angular
+		this.uscr = uscr;
 	}
 	
-//	// Setter Injection
-//		@Autowired
-//		public void setUS_Counties_Hibernate(US_Counties_Hibernate usch) {
-//			this.usch = usch;
-//		}
 
 	@Override
 	public US_County getUS_CountyById(int id) {
-		return usch.getById(id);
+		return uscr.findById(id).get();
 	}
 
 	@Override
 	public List<US_County> getAllUS_County() {
-		return usch.getAll();
+		return (List<US_County>) uscr.findAll();
 	}
 
 	@Override
 	public US_County addUS_County(US_County usc) {
-		return usch.add(usc);
+		return uscr.save(usc);
 	}
 
 	@Override
-	public void updateUS_County(US_County usc) {
-		usch.update(usc);
-		
+	public boolean updateUS_County(US_County usc) {
+		try {
+			uscr.save(usc);
+			return true;
+		} catch(Exception e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	@Override
-	public void deleteUS_County(US_County usc) {
-		usch.delete(usc);
-		
+	public boolean deleteUS_County(US_County usc) {
+		try {
+			uscr.delete(usc);
+			return true;
+		} catch(Exception e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 }
