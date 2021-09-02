@@ -1,0 +1,30 @@
+<div class="us_counties">
+    <h2 class="text-danger">US_Counties</h2>
+    <button (click)="goBack()"class="btn btn-danger text-dark">Back</button>
+	<div class="row">
+	    <table class="usc-list">
+	        <thead class="text-center text-danger">
+	            <tr>
+	                <!-- Insert Headers here  -->
+	                <th scope="col">ID</th>
+	                <th scope="col">FIPS</th>
+	                <th scope="col">State</th>
+	                <th scope="col">County</th>
+	                <th scope="col">Population</th>
+	            </tr>
+	        </thead>
+	
+	        
+	        <tbody class="text-center text-danger">
+	            <!-- insert data into here when you get it -->
+	            <tr *ngFor="let usc of uscounties">
+	                <td>{{usc.id}}</td>
+	                <td>{{usc.fips}}</td>
+	                <td>{{usc.state}}</td>
+	                <td>{{usc.county}}</td>
+	                <td>{{usc.population}}</td>
+	            </tr>
+	        </tbody>
+	    </table>
+    </div>
+</div>
