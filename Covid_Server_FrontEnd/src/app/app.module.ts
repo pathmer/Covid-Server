@@ -11,6 +11,8 @@ import { SandboxpageComponent } from './components/sandboxpage/sandboxpage.compo
 import { AppRoutingModule } from './app-routing.module';
 import { ViewUsCountiesComponent } from './components/view-us-counties/view-us-counties.component';
 import { AddUsCountiesComponent } from './components/add-us-counties/add-us-counties.component';
+import { AddUsCasesDeathsComponent } from './components/add-us-cases-deaths/add-us-cases-deaths.component';
+import { AddUsCountyDataComponent } from './components/add-us-county-data/add-us-county-data.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { AddUsCountiesComponent } from './components/add-us-counties/add-us-coun
     AppComponent,
     SandboxpageComponent,
     ViewUsCountiesComponent,
-    AddUsCountiesComponent
+    AddUsCountiesComponent,
+    AddUsCasesDeathsComponent,
+    AddUsCountyDataComponent
   ],
   imports: [
     BrowserModule,
