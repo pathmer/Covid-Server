@@ -32,6 +32,6 @@ export class AddUsCasesDeathsComponent implements OnInit {
       error => {
         console.log(error);
       }
-    )
+    );
   }
 }

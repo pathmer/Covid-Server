@@ -12,8 +12,8 @@ import javax.persistence.Table;
 public class US_County {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY, generator="us_counties_id_seq")
 	@Column(name="id", insertable=false, updatable=false)
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private int fips;
 	private String state;
@@ -23,7 +23,6 @@ public class US_County {
 	
 	public US_County() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public US_County(int id, int fips, String state, String county, int population) {

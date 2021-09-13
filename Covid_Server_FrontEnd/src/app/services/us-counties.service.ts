@@ -42,7 +42,13 @@ export class UsCountiesService {
     console.log(US_County)
     return this.http.post<US_County>(this.url + '/add', US_County, this.httpOptions).pipe(
       catchError(this.handleError<US_County>(`addUS_County`))
-    )
+    );
+  }
+
+  addSpecial_US_County(): Observable<Boolean> {
+    return this.http.get<Boolean>(this.url + '/add_special', this.httpOptions).pipe(
+      catchError(this.handleError<Boolean>(`addSpecial_US_County`))
+    );
   }
 
   

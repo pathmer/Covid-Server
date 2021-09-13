@@ -60,6 +60,17 @@ export class AddUsCountiesComponent implements OnInit {
     }
   }
 
+  add_special() {
+    this.UsCountiesService.addSpecial_US_County().subscribe(
+      uscounties => {
+        console.log(uscounties);
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
 
   goBack(): void {
     this.location.back();

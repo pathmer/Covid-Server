@@ -7,5 +7,6 @@ import dev.athmer.models.US_County;
 
 @Repository
 public interface I_US_Counties_Repository extends CrudRepository<US_County, Integer> {
+	US_County findByFips(int fips);
 
 }
